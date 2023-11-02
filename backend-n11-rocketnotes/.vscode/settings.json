@@ -1,0 +1,18 @@
+{
+  "rest-client.environmentVariables": {
+    "$shared": {
+      "url": "http://localhost:3333",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTg1Mjg1NzEsImV4cCI6MTY5ODYxNDk3MSwic3ViIjoiNyJ9.wYuXttEBf684XPQaaR_Et5shJUgKTD-SwzI4UwhAhI0"
+    },
+  },
+  "cSpell.words": [
+    "AUTOINCREMENT",
+    "DATETIME",
+    "knexfile",
+    "sqlite",
+    "VARCHAR"
+  ],
+  "cSpell.enableFiletypes": [
+    "sqlite"
+  ],
+}

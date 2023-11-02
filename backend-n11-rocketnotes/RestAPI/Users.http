@@ -1,0 +1,62 @@
+@resource = users
+
+###
+GET {{url}}/{{resource}}/ HTTP/1.1
+
+###
+# @name create
+POST {{url}}/{{resource}}/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Bruno Velho",
+    "email": "bruno@email.com",
+    "password": "12345",
+    "isAdmin": true
+}
+
+###
+###
+
+# @name update
+@id = 2
+PUT {{url}}/{{resource}} HTTP/1.1
+Authorization: bearer {{token}}
+content-type: application/json
+
+{
+    "name": "Amanda O Velho",
+    "email": "amanda@teste.com.br",
+    "password": "12345",
+    "isAdmin": true
+}
+
+###
+
+###
+# @name updatePassword
+@id = 3
+PUT {{url}}/{{resource}}/{{id}} HTTP/1.1
+content-type: application/json
+
+{
+    "password": "12345",
+    "old_password": "12345"
+}
+
+###
+
+PATCH {{url}}/{{resource}}/avatar
+Authorization: bearer {{token}}
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="text"
+
+tittle
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="avatar"; filename="avatar.png"
+Content-Type: image/png
+
+< ./avatar.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
