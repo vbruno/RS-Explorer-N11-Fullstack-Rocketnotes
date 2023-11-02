@@ -1,11 +1,11 @@
 {
   "name": "rs-explorer-n11-backend-rocketnotes",
-  "description": "",
-  "version": "1.0.0",
+  "description": "API do projeto RocketNotes do curso RS Explorer N11 da Rocketseat",
+  "version": "11.0.0",
   "private": true,
   "main": "index.js",
   "scripts": {
-    "prod": "node ./src/server.js",
+    "prod": "pm2-runtime start ecosystem.config.js --env production",
     "dev": "nodemon ./src/server.js",
     "migrate": "knex migrate:latest"
   },
@@ -20,6 +20,7 @@
     "jsonwebtoken": "^9.0.2",
     "knex": "^2.5.1",
     "multer": "^1.4.5-lts.1",
+    "pm2": "^5.3.0",
     "sqlite": "^5.0.1",
     "sqlite3": "^5.1.6"
   },
