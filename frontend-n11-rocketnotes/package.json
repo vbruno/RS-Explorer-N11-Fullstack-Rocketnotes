@@ -1,8 +1,8 @@
 {
   "name": "rs-explorer-n11-frontend-rocketnotes",
-  "description": "",
+  "description": "Frontend do projeto RocketNotes",
   "private": true,
-  "version": "0.0.0",
+  "version": "11.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
