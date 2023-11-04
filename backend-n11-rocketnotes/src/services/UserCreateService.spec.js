@@ -5,16 +5,21 @@ const AppError = require("../utils/AppError");
 
 
 describe('UserCreateService', () => {
+
+  let userRepositoryInMemory = null;
+  let userCreateService = null;
+
+  beforeEach(() => {
+    userRepositoryInMemory = new UserRepositoryInMemory();
+    userCreateService = new UserCreateService(userRepositoryInMemory);
+  })
+
   it("user should be create", async () => {
     const user = {
       name: "John Doe",
       email: "user@teste.com.",
       password: '123456'
     }
-
-    const userRepositoryInMemory = new UserRepositoryInMemory();
-
-    const userCreateService = new UserCreateService(userRepositoryInMemory);
 
     const userCreated = await userCreateService.execute(user);
 
@@ -35,10 +40,6 @@ describe('UserCreateService', () => {
       email: "user@email.com",
       password: '123456'
     }
-
-    const userRepositoryInMemory = new UserRepositoryInMemory();
-
-    const userCreateService = new UserCreateService(userRepositoryInMemory);
 
     await userCreateService.execute(user1);
 
